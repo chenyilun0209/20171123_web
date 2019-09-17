@@ -1,0 +1,100 @@
+﻿#goods .sideL {
+    float: left;
+    width: 20%;
+}
+
+#goods .sideR {
+    float: left;
+    width: 80%;
+}
+
+#goods .sidebar-nav {
+    list-style: none;
+}
+
+#goods .sideL .card {
+    border-color: white;
+}
+
+
+
+#goods .sideL .sidebarUp a {
+    text-decoration: none;
+    color: #ff3117;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+#goods .sideL .card a {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#goods .sideL .sidebarDown a:hover {
+    color: #5282a5;
+}
+
+.sideR #goodsPic {
+    float: left;
+    width: 60%;
+}
+
+.sideR #goodsinfo {
+    float: left;
+    width: 40%;
+}
+.sideR #goodsPic .goodsPic {
+    width: 90%;
+}
+
+/*#goodsPic img {
+    width: 90%;
+}*/
+
+#goodsinfo {
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+    #goodsinfo .top {
+        border-bottom: 1px solid #888888;
+        margin-bottom: 30px;
+    }
+
+    #goodsinfo .info {
+        float: left;
+        width: 50%;
+    }
+
+    #goodsinfo .price {
+        float: left;
+        width: 50%;
+        text-align:right;
+    }
+
+    /*#goodsinfo #colorBlock img {
+        width: 40px;
+    }*/
+
+    /*#goodsinfo #colorBlock {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }*/
+
+        
+
+        /*#goodsinfo .select select {
+            width: 45%;
+        }*/
+
+    #goodsinfo .contentBox {
+        margin-bottom: 20px;
+    }
+
+                
+
+        #goodsinfo .contentBox a {
+            text-decoration: none;
+            color: #727272;
+        }
+

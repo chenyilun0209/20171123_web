@@ -1,0 +1,370 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="fontpage.master.cs" Inherits="_20171123_web.fontpage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <!--BS CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
+    <!--font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!--CSS-->
+    <link rel="stylesheet" href="css/Global.css" />
+    <link rel="stylesheet" href="css/font_master.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link href="css/hamburger.css" rel="stylesheet" />
+    <!--fancybox CSS-->
+    <link rel="stylesheet" href="fancybox/jquery.fancybox.css" /> 
+    <style>
+        nav #menu .nav-item {
+            padding-left: 25px;
+    padding-right: 25px;
+    font-size: 18px;
+    font-weight: bold;
+        }
+        nav #menu li a:hover {
+            text-decoration: none;
+    color: #476881;
+    
+}
+        nav #member a{
+            text-decoration: none;
+              color: #343434;
+              padding-left:25px;
+        }
+        nav #member .imgBtn {
+            cursor:pointer;
+        }
+        nav .dropdown-menu {
+    width: 300%;
+    max-width:600px;
+    text-align: center;
+    padding: 20px;
+}
+        nav li #cart .btnBuy {
+    float: right;
+    font-size: 1em;
+    background-color: #476881;
+    color: white;
+    border: 0;
+}
+        nav #cart table {
+    width: 100%;
+    font-size:14px;
+}
+
+    nav #cart table tr:nth-of-type(1) {
+        border-top: white;
+        border-bottom: 2px solid #476881;
+    }
+
+        footer .wrapper {
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #23d3ed;
+    color: #fff;
+    text-align: center;
+}
+        footer .sns img {
+        width: 30px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+        footer .sns a:hover img {
+                width: 30px;
+            }
+        footer .sns {
+    /*margin-top: 30px;
+    margin-bottom: 30px;*/
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+        footer .sns a {
+        display: block;
+        margin-left: 10px;
+        margin-right: 10px;
+        float: left;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+    }
+        footer .sns a:hover {
+            color: #a3cfeb;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+    </style>
+    <!--jquery-->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <!--BS js-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>    
+    <!--fancybox js-->    
+    <script src="fancybox/jquery.fancybox.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <!--nav---------------------------------------------------------------------------------------->
+        <div class="container-fluid">
+            <div class="wrapper">
+                <nav class="navbar navbar-expand-lg navbar-light" style="background-color:white;">
+                    <a class="navbar-brand" href="#">
+      <asp:ImageButton ID="ImageButton2" runat="server" Width="80" ImageUrl="img/1510-7.png" CssClass="img" PostBackUrl="~/homepage.aspx" CausesValidation="False" />
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav m-auto" id="menu">
+                            <li class="nav-item">
+        <asp:LinkButton ID="LinkTop" runat="server" ForeColor="Black" CausesValidation="False" OnClick="LinkTop_Click">上裝</asp:LinkButton>
+      </li>
+      <li class="nav-item">
+        <asp:LinkButton ID="LinkBottom" runat="server" ForeColor="Black" CausesValidation="False" OnClick="LinkBottom_Click">下裝</asp:LinkButton>
+      </li>
+        <li class="nav-item">
+        <asp:LinkButton ID="LinkOutter" runat="server" ForeColor="Black" CausesValidation="False" OnClick="LinkOutter_Click">外套</asp:LinkButton>
+      </li>
+        <li class="nav-item">
+        <asp:LinkButton ID="LinkAcc" runat="server" ForeColor="Black" CausesValidation="False" OnClick="LinkAcc_Click">配件</asp:LinkButton>
+      </li>
+        <li class="nav-item">
+        <asp:LinkButton ID="LinkSale" ForeColor="Black" CausesValidation="False" PostBackUrl="~/newspage.aspx" runat="server">最新消息</asp:LinkButton>
+      </li>
+                        </ul>
+                        <ul class="navbar-nav ml-auto" id="member">
+                            <li><a>
+                        <asp:Label ID="Label1" runat="server" Text="Label" Visible="false"></asp:Label>
+                        <asp:ImageButton ID="imgbtnLogin" runat="server" Width="40" CssClass="imgBtn" ImageUrl="icon/icon-userOut.png" CausesValidation="False" OnClick="imgbtnLogin_Click" />
+                    </a></li>
+                   <li class="dropdown" id="memberDrop">
+                       <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="userStar" runat="server"><img alt="" style="width:40px;" src="icon/icon-userStar.png"/></a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <asp:Label ID="Label2" CssClass="dropdown-header" runat="server" Text="Hi"></asp:Label>
+                          <a class="dropdown-item" href="memberCenter.aspx">會員/訂單資料</a>
+                         
+                          <div class="dropdown-divider"></div>
+                        <asp:LinkButton ID="LinkButton1" CssClass="dropdown-item" runat="server" OnClick="LinkButton1_Click" CausesValidation="False">登出</asp:LinkButton>
+                         
+                 </div>
+                   </li>
+      <li class="dropdown">
+                        <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server">
+                            <ContentTemplate>
+                        
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            <img alt="" style="width:40px;" src="icon/001-commerce.png">+<asp:Label ID="lblCartTotal" runat="server" Text="0"></asp:Label>
+                        </a>
+        <div class="dropdown-menu dropdown-menu-right" id="cart">
+                    <asp:Label ID="lblCart" runat="server" Text="購物車裡無商品。" ForeColor="#476881" Visible="true"></asp:Label>
+                        
+<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BorderStyle="None" BackColor="White" BorderColor="#CCCCCC" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                            <Columns>
+                                <asp:BoundField DataField="pName" HeaderText="商品名稱" />
+                                 <asp:BoundField DataField="pStyle" HeaderText="樣式" />
+                                <asp:BoundField DataField="size" HeaderText="尺寸" />
+                                 <asp:BoundField DataField="qty" HeaderText="數量" />
+                                  <asp:BoundField DataField="price" HeaderText="單價" />
+                                  <asp:BoundField DataField="amount" HeaderText="小計" />                       
+                            </Columns>
+                            <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                            <HeaderStyle BackColor="White" Font-Bold="True" ForeColor="#476881" />
+                            <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                            <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                            <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                            <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                            <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                            <SortedDescendingHeaderStyle BackColor="#242121" />
+                        </asp:GridView>
+                            
+                       <br />
+                        
+                        <asp:Button ID="btnBuy" runat="server" CssClass="btnBuy" Text="前往結帳" Visible="false" CausesValidation="False" OnClick="btnBuy_Click"/>
+                 </div></ContentTemplate>
+ 
+                        </asp:UpdatePanel>
+                            
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <%--<nav class="navbar  " id="title">
+        <div class="wrapper clearfix">
+            
+            <div class="logo">
+                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="img/1510-7.png" CssClass="img" PostBackUrl="~/homepage.aspx" CausesValidation="False" /></div>
+            <div class="member">
+                <ul class="clearfix">
+
+                    <li><a>
+                        <asp:Label ID="Label1" runat="server" Text="Label" Visible="false"></asp:Label>
+                        <asp:ImageButton ID="imgbtnLogin" runat="server" Width="40" CssClass="imgBtn" ImageUrl="icon/icon-userOut.png" CausesValidation="False" OnClick="imgbtnLogin_Click" />
+                    </a></li>
+                   <li class="dropdown" id="memberDrop">
+                       <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="userStar" runat="server"><img alt="" src="icon/icon-userStar.png"></a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <asp:Label ID="Label2" CssClass="dropdown-header" runat="server" Text="Hi"></asp:Label>
+                          <a class="dropdown-item" href="memberCenter.aspx">會員/訂單資料</a>
+                         
+                          <div class="dropdown-divider"></div>
+                        <asp:LinkButton ID="LinkButton1" CssClass="dropdown-item" runat="server" OnClick="LinkButton1_Click" CausesValidation="False">登出</asp:LinkButton>
+                         
+                 </div>
+                   </li>
+                    
+                    <li class="dropdown">
+                        <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server">
+                            <ContentTemplate>
+                        
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            <img alt="" src="icon/001-commerce.png">+<asp:Label ID="lblCartTotal" runat="server" Text="0"></asp:Label>
+                        </a>
+                          <div class="dropdown-menu dropdown-menu-right" id="cart">
+                    <asp:Label ID="lblCart" runat="server" Text="購物車裡無商品。" ForeColor="#476881" Visible="true"></asp:Label>
+                        
+<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BorderStyle="None" BackColor="White" BorderColor="#CCCCCC" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                            <Columns>
+                                <asp:BoundField DataField="pName" HeaderText="商品名稱" />
+                                 <asp:BoundField DataField="pStyle" HeaderText="樣式" />
+                                <asp:BoundField DataField="size" HeaderText="尺寸" />
+                                 <asp:BoundField DataField="qty" HeaderText="數量" />
+                                  <asp:BoundField DataField="price" HeaderText="單價" />
+                                  <asp:BoundField DataField="amount" HeaderText="小計" />                       
+                            </Columns>
+                            <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                            <HeaderStyle BackColor="White" Font-Bold="True" ForeColor="#476881" />
+                            <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                            <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                            <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                            <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                            <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                            <SortedDescendingHeaderStyle BackColor="#242121" />
+                        </asp:GridView>
+                            
+                       <br />
+                        
+                        <asp:Button ID="btnBuy" runat="server" CssClass="btnBuy" Text="前往結帳" Visible="false" CausesValidation="False" OnClick="btnBuy_Click"/>
+                 </div></ContentTemplate>
+ 
+                        </asp:UpdatePanel>
+                            
+                            </li>
+                    
+                </ul>
+            </div>
+            <div class="menu">
+                
+                <ul>
+                    <li>
+                        <asp:LinkButton ID="LinkTop" runat="server" CausesValidation="False" OnClick="LinkTop_Click">上裝</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkBottom" runat="server" CausesValidation="False" OnClick="LinkBottom_Click">下裝</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkOutter" runat="server" CausesValidation="False" OnClick="LinkOutter_Click">外套</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkAcc" runat="server" CausesValidation="False" OnClick="LinkAcc_Click">配件</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkSale" CausesValidation="False" PostBackUrl="~/newspage.aspx" runat="server">最新消息</asp:LinkButton></li>
+                </ul>
+            </div>
+            
+
+        </div>
+    </nav>--%>
+        <!--content---------------------------------------------------------------------------------------->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!--footer---------------------------------------------------------------------------------------->
+        <footer class="container-fluid">
+       <div class="wrapper">
+           <%--<div class="logo"><img src="img/1510-2.png" alt=""></div>--%>
+        <%--<div class="sns clearfix">
+        <a href="#"><img class="img-top" src="icon/home.png" alt="">關於我們</a>
+        <a href="#"><img src="icon/new.png" alt="">最新消息</a>
+        <a href="#"><img src="icon/information.png" alt="">FAQ</a>
+        </div>--%>
+         <div class="sns clearfix"><span style="color:#3b5570;">&copy;2017 衣舞衣飾 | </span>
+        
+      
+        
+            <a href="#"><img src="icon/facebook.png" alt="FB"></a>
+        <a href="#"><img src="icon/instagram.png" alt="IG"></a>
+        <a href="#"><img src="icon/line.png" alt="LINE"></a>
+           </div>
+           </div>
+       
+        
+    </footer>
+        
+
+    <!-- 登入 Modal -->
+        
+        <asp:UpdatePanel ID="upModal" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <!-- BS Modal -->
+        <div class="modal fade bd-example-modal-lg" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+        <div class="card-group">
+  <div class="card">
+    <div class="card-header"><h3>登入</h3></div>
+  <div class="card-body text-secondary">
+   <div class="input">
+       <div>
+           <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="valid" runat="server" ErrorMessage="信箱不得空白" ControlToValidate="txtEmail" ForeColor="Red" Display="Static" ValidationGroup="loginValid"></asp:RequiredFieldValidator>
+           <asp:TextBox ID="txtEmail" placeholder="E-mail" CssClass="txt" runat="server"></asp:TextBox>        
+       </div>
+    <div>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="密碼不得空白" Display="Dynamic" ControlToValidate="txtPwd" ForeColor="Red" ValidationGroup="loginValid"></asp:RequiredFieldValidator>
+        <asp:TextBox ID="txtPwd" placeholder="Password" CssClass="txt" runat="server" TextMode="Password"></asp:TextBox>
+    </div>
+    <div class="clearfix">    
+        <asp:Label ID="lblLogin" runat="server" Visible="false" Text="信箱或密碼錯誤" ForeColor="Red"></asp:Label>
+        <a href="#">忘記密碼?</a>
+    </div>
+    <div>
+        <asp:Button ID="btnLogin" runat="server" Text="登入" CssClass="btnLogin" OnClick="btnLogin_Click" ValidationGroup="loginValid" />
+    </div>
+   </div>
+    
+  </div>
+  </div>
+  <div class="card">
+      
+    <div class="card-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h3>註冊</h3></div>
+  <div class="card-body text-secondary">
+    <h4 class="card-title">首次購物，無須註冊</h4>
+    <p class="card-text mt-5" id="divP" visible="true" runat="server">首次購物請先將商品加入購物車，<br/>再點擊購物車下方按鈕前往結帳。</p>
+      <div class="modalBuy" id="divBuy" visible="false" runat="server">
+          <p class="card-text mt-5 mb-5">點擊下方按鈕即可完成結帳!<br/>如已有帳號，請由左邊選項登入。</p>
+          <asp:Button ID="modalGoBuy" runat="server" Text="前往結帳" BorderStyle="None" BackColor="#476881" ForeColor="White" Height="35" Width="80%" CausesValidation="False" OnClick="modalGoBuy_Click"/>
+      </div>
+  </div>
+  </div>
+</div>
+
+            </div>
+
+            </div>
+    </div>
+                    </ContentTemplate>
+            </asp:UpdatePanel>
+    </form>
+</body>
+</html>

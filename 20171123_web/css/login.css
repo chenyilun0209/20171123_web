@@ -1,0 +1,41 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+
+#loginModal .card-group .card {
+    text-align: center;
+}
+
+#loginModal .card-group .input {
+    width: 90%;
+    margin: auto;
+}
+
+#loginModal .card-group .card .input div {
+    margin: 15px;
+}
+
+#loginModal .card-group .card .input .txt {
+    width: 80%;
+    height: 35px;
+}
+
+#loginModal .card-group .card .input .btnLogin {
+    width: 80%;
+    background-color: #476881;
+    height:35px;
+    color: white;
+    border: 0;
+}
+
+
+#loginModal .card-group .card .input a {
+    float: right;
+    margin-bottom: 15px;
+}
+
+#loginModal .card-group .card .card-header {
+    background-color: #476881;
+    color: white;
+}

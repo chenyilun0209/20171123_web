@@ -1,0 +1,694 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B709DB05-E983-4843-8285-262A25D01DF9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_20171123_web</RootNamespace>
+    <AssemblyName>20171123_web</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\db1510.mdf" />
+    <Content Include="App_Data\db1510_log.ldf">
+      <DependentUpon>db1510.mdf</DependentUpon>
+    </Content>
+    <Content Include="Configs\appSettings.config" />
+    <Content Include="Configs\authentication.config" />
+    <Content Include="Configs\connectionStrings.config" />
+    <Content Include="Configs\globalization.config" />
+    <Content Include="Configs\mailSettings.config" />
+    <Content Include="Configs\sessionState.config" />
+    <Content Include="css\goods.css" />
+    <Content Include="css\goodsDetail.css" />
+    <Content Include="css\hamburger.css" />
+    <Content Include="fontpage.Master" />
+    <Content Include="goods.aspx" />
+    <Content Include="icon\001-commerce.png" />
+    <Content Include="icon\002-transport.png" />
+    <Content Include="icon\delete.png" />
+    <Content Include="img\1510-5.png" />
+    <Content Include="img\1510-6.png" />
+    <Content Include="img\1510-7.png" />
+    <Content Include="img\cartList01.png" />
+    <Content Include="img\cartList02.png" />
+    <Content Include="img\cartList03.png" />
+    <Content Include="img\illustrations-01.png" />
+    <Content Include="img\illustrations-02.png" />
+    <Content Include="img\illustrations-03.png" />
+    <Content Include="img\illustrations-04.png" />
+    <Content Include="img\illustrations-05.png" />
+    <Content Include="img\illustrations-06.png" />
+    <Content Include="img\illustrations-07.png" />
+    <Content Include="img\illustrations-08.png" />
+    <Content Include="img\news\colorBlock-01.png" />
+    <Content Include="img\news\colorBlock-02.png" />
+    <Content Include="img\news\colorBlock-03.png" />
+    <Content Include="img\news\colorBlock-04.png" />
+    <Content Include="img\news\colorBlock-05.png" />
+    <Content Include="img\news\colorBlock-06.png" />
+    <Content Include="img\news\colorBlock-07.png" />
+    <Content Include="img\news\colorBlock-08.png" />
+    <Content Include="img\news\colorBlock-09.png" />
+    <Content Include="img\news\colorBlock-10.png" />
+    <Content Include="img\news\colorBlock-11.png" />
+    <Content Include="img\news\colorBlock-12.png" />
+    <Content Include="img\news\colorBlock-13.png" />
+    <Content Include="img\news\colorBlock-14.png" />
+    <Content Include="img\news\colorBlock-15.png" />
+    <Content Include="img\news\colorBlock-16.png" />
+    <Content Include="img\news\colorDetail-01.png" />
+    <Content Include="img\news\colorDetail-02.png" />
+    <Content Include="img\news\colorDetail-03.png" />
+    <Content Include="img\news\colorDetail-04.png" />
+    <Content Include="img\news\colorSlider-1.png" />
+    <Content Include="img\news\colorSlider-2.png" />
+    <Content Include="img\news\colorSlider-3.png" />
+    <Content Include="img\news\colorSlider-4.png" />
+    <Content Include="img\news\colorStyle-01.png" />
+    <Content Include="img\news\colorStyle-02.png" />
+    <Content Include="img\news\colorStyle-03.png" />
+    <Content Include="img\product\acc_1.jpg" />
+    <Content Include="img\product\acc_2.jpg" />
+    <Content Include="img\product\acc_3.jpg" />
+    <Content Include="img\product\acc_4.jpg" />
+    <Content Include="img\product\cap_a1.jpg" />
+    <Content Include="img\product\cap_a2.jpg" />
+    <Content Include="img\product\cap_b1.jpg" />
+    <Content Include="img\product\cap_c1-2.jpg" />
+    <Content Include="img\product\cap_c1.jpg" />
+    <Content Include="img\product\cap_c2.jpg" />
+    <Content Include="img\product\cap_d1-2.jpg" />
+    <Content Include="img\product\cap_d1.jpg" />
+    <Content Include="img\product\Cards-01.jpg" />
+    <Content Include="img\product\Cards-02.jpg" />
+    <Content Include="img\product\Cards-03.jpg" />
+    <Content Include="img\product\Cards-04.jpg" />
+    <Content Include="img\product\Cards-05.jpg" />
+    <Content Include="img\product\coat_a1-1.jpg" />
+    <Content Include="img\product\coat_a1-2.jpg" />
+    <Content Include="img\product\coat_a2-1.jpg" />
+    <Content Include="img\product\coat_a2-2.jpg" />
+    <Content Include="img\product\coat_b1-1.jpg" />
+    <Content Include="img\product\coat_b1-2.jpg" />
+    <Content Include="img\product\coat_b2-1.jpg" />
+    <Content Include="img\product\coat_b2-3.jpg" />
+    <Content Include="img\product\coat_c1-1.jpg" />
+    <Content Include="img\product\coat_c1-2.jpg" />
+    <Content Include="img\product\coat_c2-1.jpg" />
+    <Content Include="img\product\coat_c2-2.jpg" />
+    <Content Include="img\product\coat_d1-1.jpg" />
+    <Content Include="img\product\coat_d1-2.jpg" />
+    <Content Include="img\product\coat_e1-1.jpg" />
+    <Content Include="img\product\coat_e1-2.jpg" />
+    <Content Include="img\product\coat_f1-1.jpg" />
+    <Content Include="img\product\coat_f1-2.jpg" />
+    <Content Include="img\product\coat_g1-1.jpg" />
+    <Content Include="img\product\coat_g1-2.jpg" />
+    <Content Include="img\product\coat_g2-1.jpg" />
+    <Content Include="img\product\coat_g2-2.jpg" />
+    <Content Include="img\product\coat_h1-1.jpg" />
+    <Content Include="img\product\coat_h1-2.jpg" />
+    <Content Include="img\product\coat_h2-1.jpg" />
+    <Content Include="img\product\coat_h2-2.jpg" />
+    <Content Include="img\product\colorBox-01.png" />
+    <Content Include="img\product\colorBox-02.png" />
+    <Content Include="img\product\colorBox-03.png" />
+    <Content Include="img\product\colorBox-04.png" />
+    <Content Include="img\product\colorBox-05.png" />
+    <Content Include="img\product\colorBox-06.png" />
+    <Content Include="img\product\colorBox-07.png" />
+    <Content Include="img\product\colorBox-black.png" />
+    <Content Include="img\product\colorBox-block.png" />
+    <Content Include="img\product\colorBox-block10.png" />
+    <Content Include="img\product\colorBox-block2.png" />
+    <Content Include="img\product\colorBox-block3.png" />
+    <Content Include="img\product\colorBox-block4.png" />
+    <Content Include="img\product\colorBox-block5.png" />
+    <Content Include="img\product\colorBox-block6.png" />
+    <Content Include="img\product\colorBox-block7.png" />
+    <Content Include="img\product\colorBox-block8.png" />
+    <Content Include="img\product\colorBox-block9.png" />
+    <Content Include="img\product\colorBox-blue.png" />
+    <Content Include="img\product\colorBox-blue2.png" />
+    <Content Include="img\product\colorBox-blue3.png" />
+    <Content Include="img\product\colorBox-blue4.png" />
+    <Content Include="img\product\colorBox-flower.png" />
+    <Content Include="img\product\colorBox-geeen.png" />
+    <Content Include="img\product\colorBox-lightpink.png" />
+    <Content Include="img\product\colorBox-orangered.png" />
+    <Content Include="img\product\colorBox-pink.png" />
+    <Content Include="img\product\colorBox-snow.png" />
+    <Content Include="img\product\colorBox-tshirt.png" />
+    <Content Include="img\product\colorBox-white.png" />
+    <Content Include="img\product\colorBox-windred.png" />
+    <Content Include="img\product\colorDetail-01.png" />
+    <Content Include="img\product\colorDetail-02.png" />
+    <Content Include="img\product\colorDetail-03.png" />
+    <Content Include="img\product\colorDetail-04.png" />
+    <Content Include="img\product\colorSlider-1.png" />
+    <Content Include="img\product\colorSlider-2.png" />
+    <Content Include="img\product\colorSlider-3.png" />
+    <Content Include="img\product\colorSlider-4.png" />
+    <Content Include="img\product\colorStyle-01.png" />
+    <Content Include="img\product\colorStyle-02.png" />
+    <Content Include="img\product\colorStyle-03.png" />
+    <Content Include="img\product\dress_a1-1.jpg" />
+    <Content Include="img\product\dress_a1-2.jpg" />
+    <Content Include="img\product\dress_a2-1.jpg" />
+    <Content Include="img\product\dress_a2-2.jpg" />
+    <Content Include="img\product\dress_b1-1.jpg" />
+    <Content Include="img\product\dress_b1-2.jpg" />
+    <Content Include="img\product\dress_b2-1.jpg" />
+    <Content Include="img\product\dress_b2-2.jpg" />
+    <Content Include="img\product\dress_b3-1.jpg" />
+    <Content Include="img\product\dress_b3-2.jpg" />
+    <Content Include="img\product\dress_c1-1.jpg" />
+    <Content Include="img\product\dress_c1-2.jpg" />
+    <Content Include="img\product\dress_d1-1.jpg" />
+    <Content Include="img\product\dress_d1-2.jpg" />
+    <Content Include="img\product\dress_d2-1.jpg" />
+    <Content Include="img\product\dress_d2-2.jpg" />
+    <Content Include="img\product\dress_e1-1.jpg" />
+    <Content Include="img\product\dress_e1-2.jpg" />
+    <Content Include="img\product\dress_e2-1.jpg" />
+    <Content Include="img\product\dress_e2-2.jpg" />
+    <Content Include="img\product\dress_f1-1.jpg" />
+    <Content Include="img\product\dress_f1-2.jpg" />
+    <Content Include="img\product\dress_f1-3.jpg" />
+    <Content Include="img\product\dress_f2-1.jpg" />
+    <Content Include="img\product\dress_f2-2.jpg" />
+    <Content Include="img\product\dress_g1-1.jpg" />
+    <Content Include="img\product\dress_g1-2.jpg" />
+    <Content Include="img\product\dress_g2-1.jpg" />
+    <Content Include="img\product\dress_h1-1.jpg" />
+    <Content Include="img\product\dress_h1-2.jpg" />
+    <Content Include="img\product\jean_a1-1.jpg" />
+    <Content Include="img\product\jean_a1-2.jpg" />
+    <Content Include="img\product\jean_a2-1.jpg" />
+    <Content Include="img\product\jean_a2-2.jpg" />
+    <Content Include="img\product\jean_b1-1.jpg" />
+    <Content Include="img\product\jean_b1-2.jpg" />
+    <Content Include="img\product\jean_b2-1.jpg" />
+    <Content Include="img\product\jean_b2-2.jpg" />
+    <Content Include="img\product\jean_b3-1.jpg" />
+    <Content Include="img\product\jean_b3-2.jpg" />
+    <Content Include="img\product\jean_c1-1.jpg" />
+    <Content Include="img\product\jean_c1-2.jpg" />
+    <Content Include="img\product\jean_c2-1.jpg" />
+    <Content Include="img\product\jean_c2-2.jpg" />
+    <Content Include="img\product\jean_d1-1.jpg" />
+    <Content Include="img\product\jean_d1-2.jpg" />
+    <Content Include="img\product\jean_d2-1.jpg" />
+    <Content Include="img\product\jean_d2-2.jpg" />
+    <Content Include="img\product\light_a1-1.jpg" />
+    <Content Include="img\product\light_a1-2.jpg" />
+    <Content Include="img\product\light_a2-1.jpg" />
+    <Content Include="img\product\light_a2-2.jpg" />
+    <Content Include="img\product\light_b1-1.jpg" />
+    <Content Include="img\product\light_b1-2.jpg" />
+    <Content Include="img\product\light_b1-3.jpg" />
+    <Content Include="img\product\light_b2-1.jpg" />
+    <Content Include="img\product\light_b2-2.jpg" />
+    <Content Include="img\product\light_b2-3.jpg" />
+    <Content Include="img\product\longsle_a1-1.jpg" />
+    <Content Include="img\product\longsle_a1-2.jpg" />
+    <Content Include="img\product\longsle_a2-1.jpg" />
+    <Content Include="img\product\longsle_a2-2.jpg" />
+    <Content Include="img\product\longsle_a3-1.jpg" />
+    <Content Include="img\product\longsle_a3-2.jpg" />
+    <Content Include="img\product\longsle_b1-1.jpg" />
+    <Content Include="img\product\longsle_b1-2.jpg" />
+    <Content Include="img\product\longsle_b2-1.jpg" />
+    <Content Include="img\product\longsle_b2-2.jpg" />
+    <Content Include="img\product\longsle_c1-1.jpg" />
+    <Content Include="img\product\longsle_c1-2.jpg" />
+    <Content Include="img\product\longsle_c2-1.jpg" />
+    <Content Include="img\product\longsle_c2-2.jpg" />
+    <Content Include="img\product\longsle_c3-1.jpg" />
+    <Content Include="img\product\longsle_c3-2.jpg" />
+    <Content Include="img\product\longsle_c4-1.jpg" />
+    <Content Include="img\product\longsle_c4-2.jpg" />
+    <Content Include="img\product\longsle_d1-1.jpg" />
+    <Content Include="img\product\longsle_d1-2.jpg" />
+    <Content Include="img\product\longsle_d2-1.jpg" />
+    <Content Include="img\product\longsle_d2-2.jpg" />
+    <Content Include="img\product\longsle_d3-1.jpg" />
+    <Content Include="img\product\longsle_d3-2.jpg" />
+    <Content Include="img\product\longsle_e1-1.jpg" />
+    <Content Include="img\product\longsle_e1-2.jpg" />
+    <Content Include="img\product\longsle_e2-1.jpg" />
+    <Content Include="img\product\longsle_e2-2.jpg" />
+    <Content Include="img\product\longsle_f1-1.jpg" />
+    <Content Include="img\product\longsle_f1-2.jpg" />
+    <Content Include="img\product\longsle_f2-1.jpg" />
+    <Content Include="img\product\longsle_f2-2.jpg" />
+    <Content Include="img\product\longsle_g1-1.jpg" />
+    <Content Include="img\product\longsle_g1-2.jpg" />
+    <Content Include="img\product\longsle_g2-1.jpg" />
+    <Content Include="img\product\longsle_g2-2.jpg" />
+    <Content Include="img\product\longsle_g3-1.jpg" />
+    <Content Include="img\product\longsle_g3-2.jpg" />
+    <Content Include="img\product\longsle_g4-1.jpg" />
+    <Content Include="img\product\longsle_g4-2.jpg" />
+    <Content Include="img\product\longsle_h1-1.jpg" />
+    <Content Include="img\product\longsle_h1-2.jpg" />
+    <Content Include="img\product\longsle_h2-1.jpg" />
+    <Content Include="img\product\longsle_h2-2.jpg" />
+    <Content Include="img\product\outter_a1-1.jpg" />
+    <Content Include="img\product\outter_a1-2.jpg" />
+    <Content Include="img\product\outter_a2-1.jpg" />
+    <Content Include="img\product\outter_a2-2.jpg" />
+    <Content Include="img\product\outter_b1-1.jpg" />
+    <Content Include="img\product\outter_b1-2.jpg" />
+    <Content Include="img\product\outter_c1-1.jpg" />
+    <Content Include="img\product\outter_c1-2.jpg" />
+    <Content Include="img\product\outter_c1-3.jpg" />
+    <Content Include="img\product\outter_d1-1.jpg" />
+    <Content Include="img\product\outter_d1-2.jpg" />
+    <Content Include="img\product\outter_d2-1.jpg" />
+    <Content Include="img\product\outter_d2-2.jpg" />
+    <Content Include="img\product\outter_e1-1.jpg" />
+    <Content Include="img\product\outter_e1-2.jpg" />
+    <Content Include="img\product\outter_f1-1.jpg" />
+    <Content Include="img\product\outter_f1-2.jpg" />
+    <Content Include="img\product\pants_a1-1.jpg" />
+    <Content Include="img\product\pants_a1-2.jpg" />
+    <Content Include="img\product\pants_a2-1.jpg" />
+    <Content Include="img\product\pants_a2-2.jpg" />
+    <Content Include="img\product\pants_b1-1.jpg" />
+    <Content Include="img\product\pants_b1-2.jpg" />
+    <Content Include="img\product\pants_c1-1.jpg" />
+    <Content Include="img\product\pants_c1-2.jpg" />
+    <Content Include="img\product\pants_c2-1.jpg" />
+    <Content Include="img\product\pants_c2-2.jpg" />
+    <Content Include="img\product\pants_d1-1.jpg" />
+    <Content Include="img\product\pants_d1-2.jpg" />
+    <Content Include="img\product\pants_d2-1.jpg" />
+    <Content Include="img\product\pants_d2-2.jpg" />
+    <Content Include="img\product\pants_e1-1.jpg" />
+    <Content Include="img\product\pants_e1-2.jpg" />
+    <Content Include="img\product\pants_f1-1.jpg" />
+    <Content Include="img\product\pants_f1-2.jpg" />
+    <Content Include="img\product\scarf_a1.jpg" />
+    <Content Include="img\product\scarf_a2.jpg" />
+    <Content Include="img\product\scarf_b1.jpg" />
+    <Content Include="img\product\scarf_b2.jpg" />
+    <Content Include="img\product\scarf_c1.jpg" />
+    <Content Include="img\product\scarf_d1.jpg" />
+    <Content Include="img\product\scarf_d2.jpg" />
+    <Content Include="img\product\scort_a1.jpg" />
+    <Content Include="img\product\scort_a2.jpg" />
+    <Content Include="img\product\scort_b1.jpg" />
+    <Content Include="img\product\scort_b2.jpg" />
+    <Content Include="img\product\scort_c1.jpg" />
+    <Content Include="img\product\scort_c2.jpg" />
+    <Content Include="img\product\scort_d1.jpg" />
+    <Content Include="img\product\scort_d2.jpg" />
+    <Content Include="img\product\shirt_b1-1.jpg" />
+    <Content Include="img\product\shirt_b1-2.jpg" />
+    <Content Include="img\product\shirt_b2-1.jpg" />
+    <Content Include="img\product\shirt_b2-2.jpg" />
+    <Content Include="img\product\shirt_b3-1.jpg" />
+    <Content Include="img\product\shirt_b3-2.jpg" />
+    <Content Include="img\product\shirt_c1-1.jpg" />
+    <Content Include="img\product\shirt_c1-2.jpg" />
+    <Content Include="img\product\shirt_d1-1.jpg" />
+    <Content Include="img\product\shirt_d1-2.jpg" />
+    <Content Include="img\product\shirt_d2-1.jpg" />
+    <Content Include="img\product\shirt_d2-2.jpg" />
+    <Content Include="img\product\shirt_e1-1.jpg" />
+    <Content Include="img\product\shirt_e1-2.jpg" />
+    <Content Include="img\product\shortpant_a1-1.jpg" />
+    <Content Include="img\product\shortpant_a1-2.jpg" />
+    <Content Include="img\product\shortpant_b1-1.jpg" />
+    <Content Include="img\product\shortpant_b1-2.jpg" />
+    <Content Include="img\product\shortpant_c1-1.jpg" />
+    <Content Include="img\product\shortpant_c1-2.jpg" />
+    <Content Include="img\product\short_a1-1.jpg" />
+    <Content Include="img\product\short_a1-2.jpg" />
+    <Content Include="img\product\short_a2-1.jpg" />
+    <Content Include="img\product\short_a2-2.jpg" />
+    <Content Include="img\product\short_a3-1.jpg" />
+    <Content Include="img\product\short_a3-2.jpg" />
+    <Content Include="img\product\short_a4-1.jpg" />
+    <Content Include="img\product\short_a4-2.jpg" />
+    <Content Include="img\product\short_b1-1.jpg" />
+    <Content Include="img\product\short_b1-2.jpg" />
+    <Content Include="img\product\short_b2-1.jpg" />
+    <Content Include="img\product\short_b2-2.jpg" />
+    <Content Include="img\product\short_b3-1.jpg" />
+    <Content Include="img\product\short_b3-2.jpg" />
+    <Content Include="img\product\short_b4-1.jpg" />
+    <Content Include="img\product\short_b4-2.jpg" />
+    <Content Include="img\product\short_c1-1.jpg" />
+    <Content Include="img\product\short_c1-2.jpg" />
+    <Content Include="img\product\short_c2-1.jpg" />
+    <Content Include="img\product\short_c2-2.jpg" />
+    <Content Include="img\product\short_c3-1.jpg" />
+    <Content Include="img\product\short_c3-2.jpg" />
+    <Content Include="img\product\short_d1-1.jpg" />
+    <Content Include="img\product\short_d1-2.jpg" />
+    <Content Include="img\product\short_e1-1.jpg" />
+    <Content Include="img\product\short_e1-2.jpg" />
+    <Content Include="img\product\short_e2-1.jpg" />
+    <Content Include="img\product\short_e2-2.jpg" />
+    <Content Include="img\product\short_f1-1.jpg" />
+    <Content Include="img\product\short_f1-2.jpg" />
+    <Content Include="img\product\short_f2-1.jpg" />
+    <Content Include="img\product\short_f2-2.jpg" />
+    <Content Include="img\product\skirt_a1-1.jpg" />
+    <Content Include="img\product\skirt_a1-2.jpg" />
+    <Content Include="img\product\skirt_a2-1.jpg" />
+    <Content Include="img\product\skirt_a2-2.jpg" />
+    <Content Include="img\product\skirt_b1-1.jpg" />
+    <Content Include="img\product\skirt_b1-2.jpg" />
+    <Content Include="img\product\skirt_c1-1.jpg" />
+    <Content Include="img\product\skirt_c1-2.jpg" />
+    <Content Include="img\product\skirt_d1-1.jpg" />
+    <Content Include="img\product\skirt_d1-2.jpg" />
+    <Content Include="img\product\skirt_d2-1.jpg" />
+    <Content Include="img\product\skirt_d2-2.jpg" />
+    <Content Include="img\product\skirt_e1-1.jpg" />
+    <Content Include="img\product\skirt_e1-2.jpg" />
+    <Content Include="img\product\skirt_f1-1.jpg" />
+    <Content Include="img\product\skirt_f1-2.jpg" />
+    <Content Include="img\product\skirt_f2-1.jpg" />
+    <Content Include="img\product\skirt_f2-2.jpg" />
+    <Content Include="img\product\sweater_a1-1.jpg" />
+    <Content Include="img\product\sweater_a1-2.jpg" />
+    <Content Include="img\product\sweater_a2-1.jpg" />
+    <Content Include="img\product\sweater_a2-2.jpg" />
+    <Content Include="img\product\sweater_a3-1.jpg" />
+    <Content Include="img\product\sweater_a3-2.jpg" />
+    <Content Include="img\product\sweater_a4-1.jpg" />
+    <Content Include="img\product\sweater_a4-2.jpg" />
+    <Content Include="img\product\sweater_c1-1.jpg" />
+    <Content Include="img\product\sweater_c1-2.jpg" />
+    <Content Include="img\product\sweater_c2-1.jpg" />
+    <Content Include="img\product\sweater_c2-2.jpg" />
+    <Content Include="img\product\sweater_c3-1.jpg" />
+    <Content Include="img\product\sweater_c3-2.jpg" />
+    <Content Include="img\product\sweater_c4-1.jpg" />
+    <Content Include="img\product\sweater_c4-2.jpg" />
+    <Content Include="img\product\sweater_d1-1.jpg" />
+    <Content Include="img\product\sweater_d1-2.jpg" />
+    <Content Include="img\product\sweater_d2-1.jpg" />
+    <Content Include="img\product\sweater_d2-2.jpg" />
+    <Content Include="img\product\sweater_d3-1.jpg" />
+    <Content Include="img\product\sweater_d3-2.jpg" />
+    <Content Include="img\product\sweater_d4-1.jpg" />
+    <Content Include="img\product\sweater_d4-2.jpg" />
+    <Content Include="img\product\sweater_f1-1.jpg" />
+    <Content Include="img\product\sweater_f1-2.jpg" />
+    <Content Include="img\product\sweater_f2-1.jpg" />
+    <Content Include="img\product\sweater_f2-2.jpg" />
+    <Content Include="img\product\sweater_f3-1.jpg" />
+    <Content Include="img\product\sweater_f3-2.jpg" />
+    <Content Include="js\imagesloaded.pkgd.min.js" />
+    <Content Include="js\jquery.elevateZoom-3.0.8.min.js" />
+    <Content Include="js\masonry.pkgd.min.js" />
+    <Content Include="goodsDetail.aspx" />
+    <Content Include="cart.aspx" />
+    <Content Include="memberCenter.aspx" />
+    <Content Include="newspage.aspx" />
+    <None Include="packages.config" />
+    <Content Include="icon\icon-userIn.png" />
+    <Content Include="icon\icon-userOut.png" />
+    <Content Include="icon\icon-userStar.png" />
+    <Content Include="slick\config.rb" />
+    <Content Include="slick\fonts\slick.eot" />
+    <Content Include="slick\fonts\slick.ttf" />
+    <Content Include="slick\fonts\slick.woff" />
+    <Content Include="slick\slick-theme.less" />
+    <Content Include="slick\slick-theme.scss" />
+    <Content Include="slick\slick.less" />
+    <Content Include="slick\slick.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\font_master.css" />
+    <Content Include="css\homepage.css" />
+    <Content Include="css\login.css" />
+    <Content Include="fancybox\jquery.fancybox.css" />
+    <Content Include="fancybox\jquery.fancybox.js" />
+    <Content Include="fancybox\jquery.fancybox.min.css" />
+    <Content Include="fancybox\jquery.fancybox.min.js" />
+    <Content Include="Global.asax" />
+    <Content Include="icon\cart.png" />
+    <Content Include="icon\facebook.png" />
+    <Content Include="icon\home.png" />
+    <Content Include="icon\information.png" />
+    <Content Include="icon\instagram.png" />
+    <Content Include="icon\line.png" />
+    <Content Include="icon\new.png" />
+    <Content Include="icon\user.png" />
+    <Content Include="img\1510-2.png" />
+    <Content Include="img\1510.png" />
+    <Content Include="img\icon_cart.png" />
+    <Content Include="img\icon_user.png" />
+    <Content Include="img\product\accessories\001-hat-blocks.jpg" />
+    <Content Include="img\product\accessories\001-hat.jpg" />
+    <Content Include="img\product\accessories\001-scarf-blocks.jpg" />
+    <Content Include="img\product\accessories\001-scarf.jpg" />
+    <Content Include="img\product\accessories\002-hat-blocks.jpg" />
+    <Content Include="img\product\accessories\002-hat.jpg" />
+    <Content Include="img\product\accessories\002-scarf-blocks.jpg" />
+    <Content Include="img\product\accessories\002-scarf.jpg" />
+    <Content Include="img\product\accessories\003-hat.jpg" />
+    <Content Include="img\product\accessories\003-scarf-blocks.jpg" />
+    <Content Include="img\product\accessories\003-scarf.jpg" />
+    <Content Include="img\product\accessories\004-scarf.jpg" />
+    <Content Include="img\product\accessories\004scarf-blocks.jpg" />
+    <Content Include="img\product\accessories\3289003_48.jpg" />
+    <Content Include="img\product\bottom\001-bottom-blocks.jpg" />
+    <Content Include="img\product\bottom\001-bottom.jpg" />
+    <Content Include="img\product\bottom\001-skirt-blocks.jpg" />
+    <Content Include="img\product\bottom\001-skirt.jpg" />
+    <Content Include="img\product\bottom\002-bottom-blocks.jpg" />
+    <Content Include="img\product\bottom\002-bottom.jpg" />
+    <Content Include="img\product\bottom\002-skirt-blocks.jpg" />
+    <Content Include="img\product\bottom\002-skirt.jpg" />
+    <Content Include="img\product\bottom\003-bottom-blocks.jpg" />
+    <Content Include="img\product\bottom\003-bottom.jpg" />
+    <Content Include="img\product\bottom\003-skirt-blocks.jpg" />
+    <Content Include="img\product\bottom\003-skirt.jpg" />
+    <Content Include="img\product\bottom\004-bottom-blocks.jpg" />
+    <Content Include="img\product\bottom\004-bottom.jpg" />
+    <Content Include="img\product\bottom\004-skirt-blocks.jpg" />
+    <Content Include="img\product\bottom\004-skirt.jpg" />
+    <Content Include="img\product\outter\001-outter-blocks.jpg" />
+    <Content Include="img\product\outter\001-outter.jpg" />
+    <Content Include="img\product\outter\001-suit-blocks.jpg" />
+    <Content Include="img\product\outter\001-suit.jpg" />
+    <Content Include="img\product\outter\002-outter-blocks.jpg" />
+    <Content Include="img\product\outter\002-outter.jpg" />
+    <Content Include="img\product\outter\002-suit-blocks.jpg" />
+    <Content Include="img\product\outter\002-suit.jpg" />
+    <Content Include="img\product\outter\003-outter-blocks.jpg" />
+    <Content Include="img\product\outter\003-outter.jpg" />
+    <Content Include="img\product\outter\003-suit-blocks.jpg" />
+    <Content Include="img\product\outter\003-suit.jpg" />
+    <Content Include="img\product\outter\004-outter-blocks.jpg" />
+    <Content Include="img\product\outter\004-outter.jpg" />
+    <Content Include="img\product\top\001-sweater-blocks.jpg" />
+    <Content Include="img\product\top\001-sweater.jpg" />
+    <Content Include="img\product\top\001-top-blocks.jpg" />
+    <Content Include="img\product\top\001-top.jpg" />
+    <Content Include="img\product\top\002-sweater-blocks.jpg" />
+    <Content Include="img\product\top\002-sweater.jpg" />
+    <Content Include="img\product\top\002-top-blocks.jpg" />
+    <Content Include="img\product\top\002-top.jpg" />
+    <Content Include="img\product\top\003-sweater-blocks.jpg" />
+    <Content Include="img\product\top\003-sweater.jpg" />
+    <Content Include="img\product\top\003-top-blocks.jpg" />
+    <Content Include="img\product\top\003-top.jpg" />
+    <Content Include="img\product\top\004-sweater-blocks.jpg" />
+    <Content Include="img\product\top\004-sweater.jpg" />
+    <Content Include="img\product\top\004-top-blocks.jpg" />
+    <Content Include="img\product\top\004-top.jpg" />
+    <Content Include="img\slider_01.jpg" />
+    <Content Include="img\slider_02.jpg" />
+    <Content Include="img\slider_03.jpg" />
+    <Content Include="img\slider_04.jpg" />
+    <Content Include="js\jquery-1.12.4.min.js" />
+    <Content Include="slick\ajax-loader.gif" />
+    <Content Include="slick\fonts\slick.svg" />
+    <Content Include="slick\slick-theme.css" />
+    <Content Include="slick\slick.css" />
+    <Content Include="slick\slick.js" />
+    <Content Include="slick\slick.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="homepage.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Class\connString.cs" />
+    <Compile Include="App_Class\ezCart.cs" />
+    <Compile Include="App_Class\ezSqlClient.cs" />
+    <Compile Include="fontpage.Master.cs">
+      <DependentUpon>fontpage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fontpage.Master.designer.cs">
+      <DependentUpon>fontpage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="homepage.aspx.cs">
+      <DependentUpon>homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homepage.aspx.designer.cs">
+      <DependentUpon>homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="goods.aspx.cs">
+      <DependentUpon>goods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="goods.aspx.designer.cs">
+      <DependentUpon>goods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="goodsDetail.aspx.cs">
+      <DependentUpon>goodsDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="goodsDetail.aspx.designer.cs">
+      <DependentUpon>goodsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="memberCenter.aspx.cs">
+      <DependentUpon>memberCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="memberCenter.aspx.designer.cs">
+      <DependentUpon>memberCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="newspage.aspx.cs">
+      <DependentUpon>newspage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="newspage.aspx.designer.cs">
+      <DependentUpon>newspage.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50199</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50199/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 封裝。請啟用 NuGet 封裝還原，以下載該封裝。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

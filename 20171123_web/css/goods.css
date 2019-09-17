@@ -1,0 +1,47 @@
+﻿#goods .sideL {
+    float: left;
+    width: 20%;
+}
+
+#goods .sideR {
+    float: left;
+    width: 80%;
+}
+
+#goods .sidebar-nav {
+    list-style: none;
+}
+
+#goods .sideL .card {
+    border-color: white;
+}
+
+
+
+#goods .sideL .sidebarUp a {
+    text-decoration: none;
+    color: #ff3117;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+#goods .sideL .card a {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#goods .sideL .sidebarDown a:hover {
+    color: #5282a5;
+}
+
+#goods .sideR .header {
+    height: 300px;
+    background-image: url(../img/slider_01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    #goods .sideR .header .headerImg {
+        width: 100px;
+        height: 100px;
+    }
